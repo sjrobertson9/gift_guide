@@ -99,8 +99,13 @@ def alex(gift):
 
 # Exceptions for Haley
 def haley(gift):
-    pass
-
+    if 'prismatic shard' in gift or 'clay' in gift or 'wild horseradish' in gift or 'fish' in gift:
+        return 'hate'
+    elif 'vegetable' in gift or 'hops' in gift or 'tea leaves' in gift or 'wheat' in gift:
+        return 'dislike'
+    elif 'coconut' in gift or 'fruit salad' in gift or 'pink cake' in gift or 'sunflower' in gift:
+        return 'love'
+    
 # Exceptions for Sebastian
 def sebastian(gift):
     pass
