@@ -185,9 +185,9 @@ universal_hates    = [
 
 alex      = {
     'love' : [
+        universal_loves,
         'complete breakfast',
-        'salmon dinner',
-        universal_loves 
+        'salmon dinner'
     ],
     'like' : [
         universal_likes,

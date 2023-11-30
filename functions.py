@@ -4,8 +4,10 @@
 
 import items as i
 
+# Current list of valid characters
 names = ['alex', 'haley', 'sebastian', 'marnie', 'wizard']
 
+# List of opinion + associated friendship points
 values = {
     'love'    : '+80 FRIENDSHIP POINTS',
     'like'    : '+45 FRIENDSHIP POINTS',
@@ -14,6 +16,7 @@ values = {
     'hate'    : '-40 FRIENDSHIP POINTS'
 }
 
+# Whole shebang for checking gift opinion
 def check(name, gift):
     # check for character exceptions
     opinion = which_name_exceptions(name, gift)
@@ -22,10 +25,16 @@ def check(name, gift):
         print(gift, ":", opinion, value)
         print()
         return
-        
     opinion = get_opinion(name, gift)
-    print(gift, ": ", value)
+    if opinion is None: # not found
+        print("not found! try again m'boy")
+        print()
+        return
+    value = values[opinion]
+    print(gift, ": ", opinion, value)
+    print()
 
+# Checks if the entered name belongs to a valid character
 def check_name(name):
     if name in names:
         return True
@@ -36,7 +45,8 @@ def check_name(name):
         print("Usage:", names)
         print()
         return False
-    
+
+# Calls the relevant exception function
 def which_name_exceptions(name, gift):
     if name == ('alex'):
         return alex(gift)
@@ -49,9 +59,21 @@ def which_name_exceptions(name, gift):
     elif name == ('wizard'):
         return wizard(gift)
 
+# Determines opinion for gift + character
 def get_opinion(name, gift):
     ch_items = which_name_items(name)
+    op = 'like' # opinion to be returned
+    for key in ch_items:
+        if isinstance(ch_items[key], list):
+            for x in ch_items[key]:
+                if gift in x:
+                    return key
+        else:
+            if gift in ch_items[key]:
+                return key
+    return None # gift not found
 
+# Returns the relevant dictionary
 def which_name_items(name):
     if name == ('alex'):
         return i.alex
@@ -64,6 +86,7 @@ def which_name_items(name):
     elif name ==('wizard'):
         return i.wizard
 
+# Exceptions for Alex
 def alex(gift):
     if 'void egg' in gift:
         return 'dislike'
@@ -74,18 +97,23 @@ def alex(gift):
     else: 
         return None
 
+# Exceptions for Haley
 def haley(gift):
     pass
 
+# Exceptions for Sebastian
 def sebastian(gift):
     pass
 
+# Exceptions for Marnie
 def marnie(gift):
     pass
 
+# Exceptions for Wizard
 def wizard(gift):
     pass
 
+# Just prints a silly end message and quits
 def done():
     print()
     print("Thanks! Bye")
