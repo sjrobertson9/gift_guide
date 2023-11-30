@@ -60,7 +60,7 @@ geode_minerals = [
 
 # Universal opinions:
 
-universal_loves    : [
+universal_loves    = [
     'golden pumpkin',
     'magic rock candy',
     'pearl',
@@ -68,7 +68,7 @@ universal_loves    : [
     'rabbits foot'
 ]
 
-universal_likes    : [
+universal_likes    = [
     'artisan good',
     'cooking',
     'flower',
@@ -81,7 +81,7 @@ universal_likes    : [
     'pina colada'
 ]
 
-universal_neutrals : [
+universal_neutrals = [
     'bread',
     'clam',
     'coral',
@@ -99,7 +99,7 @@ universal_neutrals : [
     'wool'
 ]
 
-universal_dislikes : [
+universal_dislikes = [
     'building material',
     'artifact',
     'bomb',
@@ -132,7 +132,7 @@ universal_dislikes : [
     'wheat flour'
 ]
 
-universal_hates    : [
+universal_hates    = [
     'bait',
     'fossil',
     'monster loot',

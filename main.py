@@ -14,7 +14,7 @@ def main():
     while True: #character loop
         name = input(str("Enter character name: "))
         if name == "exit":
-            break
+            f.done()
         else:
             while True:
                 check = f.check_name(name)

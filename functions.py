@@ -20,7 +20,9 @@ def check(name, gift):
     if opinion is not None: # exception found
         value = values[opinion]
         print(gift, ":", opinion, value)
-        exit()
+        print()
+        return
+        
     opinion = get_opinion(name, gift)
     print(gift, ": ", value)
 
@@ -36,38 +38,38 @@ def check_name(name):
         return False
     
 def which_name_exceptions(name, gift):
-    if name.equals('alex'):
-        alex(gift)
-    elif name.equals('haley'):
-        haley(gift)
-    elif name.equals('sebastian'):
-        sebastian(gift)
-    elif name.equals('marnie'):
-        marnie(gift)
-    elif name.equals('wizard'):
-        wizard(gift)
+    if name == ('alex'):
+        return alex(gift)
+    elif name == ('haley'):
+        return haley(gift)
+    elif name == ('sebastian'):
+        return sebastian(gift)
+    elif name == ('marnie'):
+        return marnie(gift)
+    elif name == ('wizard'):
+        return wizard(gift)
 
 def get_opinion(name, gift):
     ch_items = which_name_items(name)
 
 def which_name_items(name):
-    if name.equals('alex'):
+    if name == ('alex'):
         return i.alex
-    elif name.equals('haley'):
+    elif name == ('haley'):
         return i.haley
-    elif name.equals('sebastian'):
+    elif name == ('sebastian'):
         return i.sebastian
-    elif name.equals('marnie'):
+    elif name == ('marnie'):
         return i.marnie
-    elif name.equals('wizard'):
+    elif name ==('wizard'):
         return i.wizard
 
 def alex(gift):
-    if gift.equals('void egg'):
+    if 'void egg' in gift:
         return 'dislike'
-    elif gift.equals('fruit tree fruit'):
+    elif 'fruit tree fruit' in gift:
         return 'like'
-    elif gift.equals('salmonberry') or gift.equals('wild horseradish'):
+    elif 'salmonberry' in gift or 'wild horseradish' in gift:
         return 'dislike'
     else: 
         return None
