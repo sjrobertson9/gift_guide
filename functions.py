@@ -12,11 +12,11 @@ values = {
     'love'    : '+80 FRIENDSHIP POINTS',
     'like'    : '+45 FRIENDSHIP POINTS',
     'neutral' : '+20 FRIENDSHIP POINTS',
-    'dislike' : '-20 FRIENDSHIP POINTS',
-    'hate'    : '-40 FRIENDSHIP POINTS'
+    'dislike' : '-20 FRIENDSHIP POINTS idiot',
+    'hate'    : '-40 FRIENDSHIP POINTS ur so dumb for that lol'
 }
 
-# Whole shebang for checking gift opinion
+# Stupied Whole shebang for checking gift opinion
 def check(name, gift):
     # check for character exceptions
     opinion = which_name_exceptions(name, gift)
@@ -27,14 +27,14 @@ def check(name, gift):
         return
     opinion = get_opinion(name, gift)
     if opinion is None: # not found
-        print("not found! try again m'boy")
+        print("not found! try again idiot")
         print()
         return
     value = values[opinion]
     print(gift, ": ", opinion, value)
     print()
 
-# Checks if the entered name belongs to a valid character
+# Stupy Checks if the entered name belongs to a valid character
 def check_name(name):
     if name in names:
         return True
@@ -59,7 +59,7 @@ def which_name_exceptions(name, gift):
     elif name == ('wizard'):
         return wizard(gift)
 
-# Determines opinion for gift + character
+# Determines opinion for gift + character + Stupiw
 def get_opinion(name, gift):
     ch_items = which_name_items(name)
     op = 'like' # opinion to be returned
@@ -105,8 +105,10 @@ def haley(gift):
         return 'dislike'
     elif 'coconut' in gift or 'fruit salad' in gift or 'pink cake' in gift or 'sunflower' in gift:
         return 'love'
+    else:
+        return None
     
-# Exceptions for Sebastian
+# Exceptions for Sebastian dumb
 def sebastian(gift):
     pass
 
@@ -121,6 +123,6 @@ def wizard(gift):
 # Just prints a silly end message and quits
 def done():
     print()
-    print("Thanks! Bye")
+    print("Thanks! Bye you idiot!")
     print()
     exit()
